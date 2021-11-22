@@ -6,25 +6,54 @@ Game cANvaS
 <script>
 var canvas;
 var canvasContext;
+var ballX= 50;
+var ballSpeedX = 10;
 window.onload= function(){
       canvas = document.getElementById('gameCanvas');
       canvasContext= canvas.getContext('2d');
-      drawEverything();
-      drawEverything();
-      drawEverything();
      
+      var framesPerSecond = 30;
+
+      setInterval(function(){
+         moveEverything();
+         drawEverything();
+
+      }, 1000/framesPerSecond);	
+}
+
+ 	 function callBoth(){
+               moveEverything();
+              	drawEverything();
+}
+
+
+   function moveEverything(){
+      
+      ballX= ballX+ballSpeedX;
+         if (ballX< 0){
+           ballSpeedX = -ballSpeedX;
+     
+  }
+
+       if (ballX> canvas.width){
+           ballSpeedX = -ballSpeedX;
+     
+  }
 }
    function drawEverything(){
-      console.log("called drawEverything");
-      canvasContext.fillStyle = 'black';
-      canvasContext.fillRect(0,0, canvas.width, canvas.height);
-
-      canvasContext.fillStyle= 'white';
-      canvasContext.fillRect(225, 210, 200, 200);
-
-      canvasContext.fillStyle= 'red';
-      canvasContext.fillRect(canvas.width/2, 200, 50, 25);
-}
+      
+      //next line blanks the screen out with black
+      
+      colorRect(0,0, canvas.width, canvas.height, 'black');
+     //white is left player paddle
+      colorRect(0, 210,10, 100, 'white')
+    //red is our tennis ball
+      colorRect(ballX, 100, 10, 10, 'red');
+}  
+        function colorRect(leftX, topY, width, height, drawColor){
+        canvasContext.fillStyle = drawColor;
+        canvasContext.fillRect(leftX, topY, width, height);
+    }
 
 
 </script>
