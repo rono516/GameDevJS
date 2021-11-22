@@ -7,19 +7,26 @@ Game cANvaS
 var canvas;
 var canvasContext;
 window.onload= function(){
-      var name = "Rono";
-      console.log("hello there"+name);
       canvas = document.getElementById('gameCanvas');
       canvasContext= canvas.getContext('2d');
+      drawEverything();
+      drawEverything();
+      drawEverything();
+     
+}
+   function drawEverything(){
+      console.log("called drawEverything");
       canvasContext.fillStyle = 'black';
       canvasContext.fillRect(0,0, canvas.width, canvas.height);
 
-      canvasContext.fillStyle= 'red';
-      canvasContext.fillRect(100, 200, 50, 25);
+      canvasContext.fillStyle= 'white';
+      canvasContext.fillRect(225, 210, 200, 200);
 
-      canvasContext.fillStyle= 'green';
-      canvasContext.fillRect(400, 200, 50, 25);
+      canvasContext.fillStyle= 'red';
+      canvasContext.fillRect(canvas.width/2, 200, 50, 25);
 }
+
+
 </script>
 
 </html>
