@@ -42,13 +42,22 @@ window.onload= function(){
 }
    function drawEverything(){
       
-      //next line blanks the screen out with black
+       //next line blanks the screen out with black
       
-      colorRect(0,0, canvas.width, canvas.height, 'black');
-     //white is left player paddle
-      colorRect(0, 210,10, 100, 'white')
-    //red is our tennis ball
-      colorRect(ballX, 100, 10, 10, 'red');
+       colorRect(0,0, canvas.width, canvas.height, 'black');
+       //white is left player paddle
+       colorRect(0, 210,10, 100, 'white')
+       //red is our tennis ball
+       //colorRect(ballX, 100, 10, 10, 'red');
+
+	
+       //next line draws ball
+       canvasContext.fillStyle= 'white';
+       canvasContext.beginPath();
+       canvasContext.arc(ballX, 100, 10, 0, Math.PI*2, true);
+       canvasContext.fill();
+       
+
 }  
         function colorRect(leftX, topY, width, height, drawColor){
         canvasContext.fillStyle = drawColor;
