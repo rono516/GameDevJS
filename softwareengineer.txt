@@ -1,0 +1,32 @@
+design
+planning
+
+module test
+user test
+Production testing- test load of application
+
+
+OTHER EDITORS
+Full screen editors - text editors that occupy full display to sideline user from the OS and other applications and prevent
+distractions. Example full screen editors; Acme, Coderoom and FocusWriter.
+Multiple window editors - allows you to work on more than one file at a time and cut and paste text from different windows
+e.g VS code.
+DOS editor is  a character based editor that comes with MS-DOS and 32-bit version of Windows. Can work on 66, 256, lines upto
+5MB file size and multiple files at a time.
+Visual editor is a screen editor in UNIX OS with no menus and so it uses a combination of keystrokes to accomplish tasks.
+Online editors provide an interface for editing texts and files within a web browser e.g CKEditor, SnapEditor, designmode by internet explorer
+
+
+EDITING PROCESS
+Part of element or document to be modified is selected
+determine how to format lines on view and how to display it
+execute operations to modify document
+update the view properly
+
+USER INTERFACE OF EDITORS
+
+User interface of the editors means the input , output and interaction language which we interact with the editors.
+Input is how data or information is entered. Input can be text, button devices, special function keys and locator devices e.g a mouse.
+Output is how edited documents are displayed e.g monitor.
+Interaation language  can be typing oriented, text command or menu oriented ways to interact with the editors.
+
