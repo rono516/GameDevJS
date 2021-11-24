@@ -1,6 +1,5 @@
 <html>
 
-Game cANvaS
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 
 <script>
@@ -13,6 +12,7 @@ var ballSpeedY = 4;
 
 
 var paddle1Y= 250;
+var paddle2Y = 250;
 const PADDLE_HEIGHT= 100;
 
 function calculateMousePos(evt){
@@ -38,20 +38,42 @@ window.onload= function(){
          drawEverything();
 
       }, 1000/framesPerSecond);	
+	  
+	  canvas.addEventListener('mousemove', 
+	            function(evt){
+	              var mousePos = calculateMousePos(evt)	;
+				  paddle1Y = mousePos.y- (PADDLE_HEIGHT/2);
+				  
+	            });	
    }
 
- 	 function callBoth(){
+ 	 function callBoth(){ 
                moveEverything();
               	drawEverything();
   }
-
+//function to reset paddle when it misses the ball
+   function ballReset(){
+     ballSpeedX = -ballSpeedX;
+     ballX = canvas.width/2;
+	 ballY = canvas.height/2;
+   
+   
+   }
 
    function moveEverything(){
       
       ballX= ballX+ballSpeedX;
 	  ballY= ballY+ballSpeedY;
       if (ballX< 0){
-           ballSpeedX = -ballSpeedX;
+	  
+	     if(ballY > paddle1Y && ballY < paddle1Y+ PADDLE_HEIGHT){
+		     ballSpeedX = -ballSpeedX;
+		 }else{
+		  ballReset();
+		 
+		 }
+           
+		  
      
          }      
 
@@ -74,8 +96,10 @@ window.onload= function(){
        //next line blanks the screen out with black
       
        colorRect(0,0, canvas.width, canvas.height, 'black');
-       //white is left player paddle
-       colorRect(0, 210,10, 100, 'white')
+       //white below is left player paddle
+       colorRect(0, paddle1Y,10, PADDLE_HEIGHT, 'white')
+	   //red below is left player paddle
+	   colorRect(canvas.width-(10), paddle2Y, 10, PADDLE_HEIGHT, 'red');
        //red is our tennis ball
        //colorRect(ballX, 100, 10, 10, 'red');
        //next line draws the ball
