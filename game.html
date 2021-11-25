@@ -147,6 +147,13 @@ window.onload= function(){
      
          }
     }
+   
+   function drawNet(){
+     for(var i= 0; i< canvas.height; i+=40){
+	     colorRect( canvas.width/2-1,i , 2, 20, 'white');
+	 }
+   }   
+	
    function drawEverything(){
            
        //next line blanks the screen out with black
@@ -168,6 +175,8 @@ window.onload= function(){
 	    canvasContext.fillText("Click to Continue", 350, 500);
 	    return;
 	   }
+	   
+	   drawNet();
 	 
        //white below is left player paddle
        colorRect(0, paddle1Y,PADDLE_THICKNESS, PADDLE_HEIGHT, 'white')
