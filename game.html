@@ -12,7 +12,7 @@ var ballSpeedY = 4;
 
 var player1Score = 0;
 var player2Score = 0;
-const WINNING_SCORE = 3;
+const WINNING_SCORE = 2;
 
 var showingWinScreen = false;
 
@@ -165,14 +165,15 @@ window.onload= function(){
 	    canvasContext.fillStyle= 'white';
 	   
 	   if (player1Score>= WINNING_SCORE){
-	      canvasContext.fillText("Left Player Won", 350, 200);
+	      canvasContext.fillText("YOU WON", 400, 300);
 	   
 	   } else if (player2Score>= WINNING_SCORE) {
-	       canvasContext.fillText("Right Player Won", 350, 200);
+	       //colorRect(0,0, canvas.width, canvas.height, 'blue');
+	       canvasContext.fillText("COMPUTER WON", 400, 300);
 	   
 	   }
 	    
-	    canvasContext.fillText("Click to Continue", 350, 500);
+	    canvasContext.fillText("CLICK TO CONTINUE", 400, 350);
 	    return;
 	   }
 	   
